@@ -1,0 +1,30 @@
+{
+	"postSchema" : {
+		"title" : "Schema for Sample Post",
+		"type" : "object",
+		"properties" : {
+			"id" : {
+				"type" : "integer"
+			},
+			"user" : {
+				"type" : "object",
+				"properties" : {
+					"First Name" : {
+						"type" : "string"
+					},
+					"Last Name" : {
+						"type" : "string"
+					}
+				}
+			},
+			"subjects" : {
+				"type" : "array",
+				"properties" : {
+					"type" : "string"
+				}
+			}
+		},
+		"additionalProperties" : false,
+		"required" : ["id","user.Last Name"]
+ 	}
+}
