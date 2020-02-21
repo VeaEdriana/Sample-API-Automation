@@ -16,9 +16,9 @@ DriverCleanerCollector.getInstance().addDriverCleaner(new com.kms.katalon.core.c
 DriverCleanerCollector.getInstance().addDriverCleaner(new com.kms.katalon.core.windows.keyword.contribution.WindowsDriverCleaner())
 
 
-RunConfiguration.setExecutionSettingFile('/var/folders/13/q1xldntj6r559rm3tkz3qlvm0000gp/T/Katalon/20200221_111553/execution.properties')
+RunConfiguration.setExecutionSettingFile('/var/folders/13/q1xldntj6r559rm3tkz3qlvm0000gp/T/Katalon/Test Cases/API Test Case/20200221_115432/execution.properties')
 
 TestCaseMain.beforeStart()
 
-        TestCaseMain.runWSVerificationScript(new TestCaseBinding('',[:]), 'import static org.assertj.core.api.Assertions.*\n\nimport com.kms.katalon.core.testobject.RequestObject\nimport com.kms.katalon.core.testobject.ResponseObject\nimport com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS\nimport com.kms.katalon.core.webservice.verification.WSResponseManager\n\nimport groovy.json.JsonSlurper\nimport internal.GlobalVariable as GlobalVariable\n\nRequestObject request = WSResponseManager.getInstance().getCurrentRequest()\nResponseObject response = WSResponseManager.getInstance().getCurrentResponse()\n\nassertThat(response.getStatusCode()).isEqualTo(201)', FailureHandling.STOP_ON_FAILURE, true)
-
+        TestCaseMain.runTestCase('Test Cases/API Test Case', new TestCaseBinding('Test Cases/API Test Case',[:]), FailureHandling.STOP_ON_FAILURE , false)
+    

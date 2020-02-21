@@ -14,15 +14,25 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
-import com.kms.katalon.core.webservice.verification.WSResponseManager
-import com.kms.katalon.core.testobject.ResponseObject
+import com.kms.katalon.core.webservice.verification.WSResponseManager as WSResponseManager
+import com.kms.katalon.core.testobject.ResponseObject as ResponseObject
+
 
 WS.sendRequestAndVerify(findTestObject('Postman/GET'))
+
 WS.sendRequestAndVerify(findTestObject('Postman/GET-Specific'))
 
+WS.sendRequestAndVerify(findTestObject('Postman/POST-Form'))
 
-//Local Declaration to get response
-//ResponseObject response = WSResponseManager.getInstance().getCurrentResponse()
-//WS.getResponseStatusCode(response)
-//WS.verifyResponseStatusCode(response, 200)
+WS.sendRequestAndVerify(findTestObject('Postman/POST-Raw'))
+
+WS.sendRequestAndVerify(findTestObject('Postman/PUT'))
+
+WS.sendRequestAndVerify(findTestObject('Postman/PATCH'))
+
+WS.sendRequestAndVerify(findTestObject('Postman/DELETE'))
+
+WS.sendRequestAndVerify(findTestObject('Postman/Login (Basic Auth)'))
+
+WS.sendRequestAndVerify(findTestObject('Postman/Login (Bearer Token)'))
 
