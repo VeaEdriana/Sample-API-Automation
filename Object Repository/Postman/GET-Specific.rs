@@ -31,6 +31,7 @@ import internal.GlobalVariable as GlobalVariable
 RequestObject request = WSResponseManager.getInstance().getCurrentRequest()
 ResponseObject response = WSResponseManager.getInstance().getCurrentResponse()
 
-assertThat(response.getStatusCode()).isEqualTo(201)</verificationScript>
+assertThat(response.getStatusCode()).isEqualTo(200)
+</verificationScript>
    <wsdlAddress></wsdlAddress>
 </WebServiceRequestEntity>

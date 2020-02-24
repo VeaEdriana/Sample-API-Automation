@@ -9,4 +9,9 @@
       <initValue>'https://postman-echo.com'</initValue>
       <name>baseURL</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'https://adl-api.tooltwist-project.com/'</initValue>
+      <name>adl-url</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>

@@ -1,30 +1,121 @@
-{
-	"postSchema" : {
-		"title" : "Schema for Sample Post",
-		"type" : "object",
-		"properties" : {
-			"id" : {
-				"type" : "integer"
-			},
-			"user" : {
-				"type" : "object",
-				"properties" : {
-					"First Name" : {
-						"type" : "string"
-					},
-					"Last Name" : {
-						"type" : "string"
-					}
-				}
-			},
-			"subjects" : {
-				"type" : "array",
-				"properties" : {
-					"type" : "string"
-				}
-			}
-		},
-		"additionalProperties" : false,
-		"required" : ["id","user.Last Name"]
- 	}
+{	
+        "title" : "Company Results Schema",
+        "type"  : "object",
+        "properties" : {
+                "id": {
+                    "type":"integer",
+                    "minimum" : 0
+                },
+                "name": {
+                    "type":"string"
+                },
+                "status":{
+                    "type":"string",
+                    "enum" : ["ACTIVE", "INACTIVE", "PENDING"]
+                },
+                "companyURL": {
+                    "type": ["string","null"],
+                    "format" : "uri"
+                },
+                "companyLogoImageUrl": {
+                    "type": ["string","null"]
+                },
+                "mainOffice" : {
+                    "type" : "object",
+                    "properties" : {
+                        "status": {
+                            "type":"string",
+                            "enum" : ["ACTIVE", "INACTIVE", "PENDING"]
+                        },
+                        "displayName": {
+                            "type" : "string"
+                        },
+                        "name": {
+                            "type" : "string"
+                        },
+                        "printTradingNameOnly": {
+                            "type" : "boolean"
+                        },
+                        "email": {
+                            "type" : "string",
+                            "format" : "email"
+                        },
+                        "phone": {
+                            "type" : "string",
+                            "format" : "phone"
+                        },
+                        "fax": {
+                            "type" : ["string","null"]
+                        },
+                        "abnNumber": {
+                            "type" : "string",
+                            "pattern" : "^([0-9]{11})$"
+                        },
+                        "acnNumber": {
+                            "type" : "string",
+                            "pattern" : "^([0-9]{9})"
+                        },
+                        "licenseNumber": {
+                            "type" :"string"
+                        },
+                        "licenseeName": {
+                            "type" : "string"
+                        },
+                        "licenseExpiryDate": {
+                            "type" : "string",
+                            "format" : "date"
+                        },
+                        "managerId": {
+                            "type" : ["integer","null"],
+                            "minimum" : 0
+                        },
+                        "rentalBondId":{
+                            "type" : "string"
+                        },
+                        "websiteUrl": {
+                            "type" : ["string","null"],
+                            "format" : "uri"
+                        },
+                        "contact": {
+                            "type" : "string"
+                        },
+                        "registrationCode":{
+                            "type" : [ "string", "null" ]
+                        },
+                        "registrationDate":{
+                            "type" : ["string","null"],
+                            "format" : "date"
+                        },
+                        "registrationExpiryDate": {
+                            "type" : "string",
+                            "format" : "date"
+                        },
+                        "isDeleted": {
+                            "type" : "boolean"
+                        },
+                        "address": {
+                            "address1": {
+                                "type" : "string"
+                            },
+                            "address2": {
+                                "type" : ["string","null"]
+                            },
+                            "suburb": {
+                                "type" : "string"
+                            },
+                            "state": {
+                                "type" : "string"
+                            },
+                            "postcode": {
+                                "type" : "string",
+                                "maxLength" : 4,
+                                "minLength" : 3,
+                                "pattern" : "/^[0-9]{4}/"
+                            }
+                        }
+                    }
+                }
+        },
+        "required": ["name", "id"],
+        "additionalProperties": true
 }
